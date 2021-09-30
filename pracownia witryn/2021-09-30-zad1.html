@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+			.container {
+				display: grid;
+				grid-template-columns: 1fr 2fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				grid-template-areas:
+					'jeden dwa trzy'
+					'jeden cztery trzy';
+			}
+			.container div {
+				padding: 2rem 0;
+			}
+			.container .red {
+				background-color: rgba(255, 128, 128, 192);
+				grid-area: jeden;
+			}
+			.container .blue {
+				background-color: rgba(128, 128, 255, 192);
+				grid-area: dwa;
+			}
+			.container .yellow {
+				background-color: rgba(255, 255, 128, 192);
+				grid-area: cztery;
+			}
+			.container .green {
+				background-color: rgba(128, 255, 128, 192);
+				grid-area: trzy;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="red">
+				<p>red</p>
+			</div>
+			<div class="blue">
+				<p>blue</p>
+			</div>
+			<div class="yellow">
+				<p>yellow</p>
+			</div>
+			<div class="green">
+				<p>green</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+			.grid-container {
+				display: grid;
+				grid-template-rows: 1fr 1fr 1fr;
+				grid-template-columns: 25fr 25fr 15fr 35fr;
+				grid-gap: 1rem;
+				grid-template-areas:
+					'a a b c'
+					'e e b d'
+					'f g g g';
+			}
+			.a,
+			.b,
+			.c,
+			.d,
+			.e,
+			.f,
+			.g,
+			.h {
+				min-height: 4rem;
+			}
+			.a {
+				background-color: red;
+				grid-area: a;
+			}
+			.b {
+				background-color: darkorchid;
+				grid-area: b;
+			}
+			.c {
+				background-color: darkorange;
+				grid-area: c;
+			}
+			.d {
+				background-color: deeppink;
+				grid-area: d;
+			}
+			.e {
+				background-color: darkkhaki;
+				grid-area: e;
+				display: grid;
+				grid-template-areas: '. h .';
+			}
+			.f {
+				background-color: tomato;
+				grid-area: f;
+			}
+			.g {
+				background-color: seagreen;
+				grid-area: g;
+			}
+			.h {
+				background-color: teal;
+				grid-area: h;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid-container">
+			<div class="a">a</div>
+			<div class="b">b</div>
+			<div class="c">c</div>
+			<div class="e">
+				e
+				<div class="h">h</div>
+			</div>
+			<div class="d">d</div>
+			<div class="f">f</div>
+			<div class="g">g</div>
+		</div>
+	</body>
+</html>
