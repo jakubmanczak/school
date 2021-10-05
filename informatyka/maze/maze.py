@@ -1,16 +1,19 @@
-# CZYSZCZENIE KONSOLI
-# by nie bylo widac komendy wywolujacej kod
+# CZYSZCZENIE KONSOLI I DODANIE KOLORKÓW
+from __future__ import print_function
 import os
+import chalk
 clear = lambda: os.system('cls')
 clear()
 
-print('nazwa pliku z labiryntem do wczytania: ')
+print(chalk.yellow('wpisz nazwę pliku z labiryntem do wczytania: '))
 mazename = input()
-print('wczytuję plik o nazwie ' + mazename + '\n')
-plik = open(mazename + ".txt", "r")
+print(chalk.yellow('wczytuję plik o nazwie ' + mazename + '\n'))
+plik = open(mazename + '.txt', 'r')
 
 maze = plik.read()
 plik.close()
+maze = maze.replace('X', '[]')
+maze = maze.replace('W', '  ')
 print(maze)
 
-input('\nwciśnij cokolwiek by zakończyć program')
+input(chalk.yellow('\nwciśnij cokolwiek by zakończyć program'))
