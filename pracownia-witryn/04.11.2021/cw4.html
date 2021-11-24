@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<p id="zwrot"></p>
+		<script>
+			let num1 = prompt('podaj liczbe1');
+			let num2 = prompt('podaj liczbe2');
+			let text = document.querySelector('#zwrot');
+			if (num1 != num2) {
+				num1 > num2
+					? (text.innerText = `liczba 1 (${num1}) jest większa`)
+					: (text.innerText = `liczba 2 (${num2}) jest większa`);
+			} else {
+				text.innerText = 'liczby są równe';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>2021.10.21 ZADANIE1</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body > div {
+				display: grid;
+				width: fit-content;
+				height: 59rem;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 1fr 2fr 3fr 30px;
+			}
+			div > * {
+				padding: 0.5rem;
+			}
+			header {
+				background-color: darkseagreen;
+				grid-column: 1/4;
+				grid-row: 1/2;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+			}
+			header > img {
+				height: 5rem;
+			}
+			section:first-of-type {
+				grid-column: 1/2;
+				grid-row: 2/3;
+				background-color: darkkhaki;
+			}
+			section {
+				grid-column: 2/3;
+				grid-row: 2/3;
+				background-color: #72ff72;
+			}
+			section > img {
+				height: 8rem;
+			}
+			section:last-of-type {
+				grid-column: 3/3;
+				grid-row: 2/3;
+				background-color: darkkhaki;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 1rem;
+			}
+			section:last-of-type > * {
+				margin: 0.5rem;
+			}
+			section > a {
+				padding: 0.5rem;
+				background-color: yellow;
+				color: green;
+			}
+			article {
+				grid-column: 1/4;
+				grid-row: 3/4;
+				background-color: #72ff72;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+			}
+			article > div {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+			}
+			article > * {
+				margin: 0.5rem;
+			}
+			footer {
+				grid-column: 1/4;
+				grid-row: 4/5;
+				background-color: darkseagreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<header>
+				<h2>Najlepsza pizza w mieście</h2>
+				<img src="./pizza.png" alt="zdjęcie pizzy" />
+			</header>
+			<section>
+				<p>U nas zamówisz pizzę z dowozem</p>
+				<img src="" alt="Nasze logo." />
+			</section>
+			<section>
+				<h3>Pizzeria Margherita</h3>
+				<p>ul. Botaniczna 4, Zielona Góra</p>
+				<img src="./pizza.png" alt="zdjęcie pizzy II: Electric Boogaloo" />
+			</section>
+			<section>
+				<h3>Oferta</h3>
+				<ol>
+					<li>Pizze</li>
+					<li>Lasagne</li>
+					<li>Sałatki</li>
+				</ol>
+				<a href="./pizza.png" download>Pobierz pełną ofertę</a>
+			</section>
+			<article>
+				<h3>Oblicz koszt dostawy:</h3>
+				<div>
+					<input type="checkbox" id="if" />
+					<p>Jestem z Zielonej Góry</p>
+				</div>
+				<p>albo,</p>
+				<div>
+					<p>podaj liczbę km od Zielonej Góry:</p>
+					<input type="number" min="1" id="km" />
+				</div>
+				<input type="submit" id="submit" value="Prześlij zamówienie" />
+				<p id="pWypisz">a</p>
+			</article>
+			<script>
+				ifObj = document.querySelector('#if');
+				kmObj = document.querySelector('#km');
+				pwObj = document.querySelector('#pWypisz');
+				sbObj = document.querySelector('#submit');
+
+				ifObj.onclick = () => {
+					if (ifObj.checked) {
+						kmObj.disabled = true;
+					} else {
+						kmObj.disabled = false;
+					}
+				};
+				sbObj.onclick = () => {
+					if (ifObj.checked) {
+						pwObj.innerText = 'Dostawę masz za darmo!! 😀😀';
+					} else {
+						pwObj.innerText = `Koszt twojej dostawy wynosi ${
+							kmObj.value * 2
+						} złotych! 😇`;
+					}
+				};
+			</script>
+			<footer>
+				<p>Strona stworzona przez 000000000000</p>
+			</footer>
+		</div>
+	</body>
+</html>

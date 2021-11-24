@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<p id="zwrot"></p>
+		<script>
+			let num1 = prompt('podaj liczbe1');
+			let num2 = prompt('podaj liczbe2');
+			let p = document.querySelector('#zwrot');
+			if (num2 != 0) {
+				p.innerText = num1 / num2;
+			} else {
+				p.innerText = 'nie można dzielić przez zero';
+			}
+		</script>
+	</body>
+</html>

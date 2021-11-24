@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<input type="password" placeholder="wpisz hasło przyjacielu :)" id="pass" />
+		<input type="button" value="haslo zatwierdz" id="passsubmit" />
+		<p id="zwrot"></p>
+		<script>
+			let passBoxValue = document.querySelector('#pass').value;
+			let passSubmit = document.querySelector('#passsubmit');
+			let p = document.querySelector('#zwrot');
+			passSubmit.onclick = () => {
+				passSubmit = document.querySelector('#passsubmit');
+				document.querySelector('#pass').value == 'DoE14czas'
+					? (p.innerText = 'Hasło prawidłowe.')
+					: (p.innerText = 'Błędne hasło.');
+			};
+		</script>
+	</body>
+</html>

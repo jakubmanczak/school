@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<p id="zwrot"></p>
+		<script>
+			p = document.querySelector('#zwrot');
+			num = prompt('podaj liczbe');
+			if (isNaN(num)) {
+				p.innerText = 'Nie umiesz czytać.';
+			} else {
+				num == 1
+					? (p.innerText = 'Podałeś liczbę 1.')
+					: (p.innerText = 'Podałeś inną liczbę.');
+			}
+		</script>
+	</body>
+</html>
